@@ -17,7 +17,7 @@ a {
 }
 .container {
   /* background-color: #dad0c8; */
-  width: 1530px;
+  width: auto;
   margin: auto;
   padding-left: 50px;
   padding-right: 50px;
