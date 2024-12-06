@@ -1,5 +1,5 @@
 .container {
-  background-color: rgb(26, 110, 110);
+  background-color: #6b4226;
   height: 100px;
   display: flex;
   align-items: center;
@@ -8,4 +8,5 @@
 .logo {
   font-size: 40px;
   font-weight: 500;
+  color: #fffdd0;
 }

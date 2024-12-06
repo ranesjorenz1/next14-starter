@@ -1,5 +1,6 @@
-.links {
+.navlinks {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #f5f5dc;
 }

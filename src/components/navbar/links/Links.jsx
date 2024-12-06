@@ -23,9 +23,13 @@ const Links = () => {
       title: "Contact",
       path: "/contact",
     },
+    {
+      title: "Login",
+      path: "/login",
+    },
   ];
   return (
-    <div className={styles.links}>
+    <div className={styles.navlinks}>
       {links.map((link) => (
         <Link href={link.path} key={links.title}>
           {link.title}

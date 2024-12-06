@@ -1,5 +1,5 @@
 :root {
-  --bg: #f8f8f8;
+  --bg: #f5f5dc;
   --text: #333333;
 }
 * {
@@ -16,8 +16,8 @@ a {
   color: inherit;
 }
 .container {
-  background-color: #dad0c8;
-  width: 1000px;
+  /* background-color: #dad0c8; */
+  width: 1530px;
   margin: auto;
   padding-left: 50px;
   padding-right: 50px;
