@@ -1,6 +1,10 @@
-// import { link } from "fs";
-import Link from "next/link";
-import NavLinks from "./links.module.css";
+"use client";
+
+import { Button } from "@mui/material";
+import styles from "./links.module.css";
+import NavLink from "./navLink/navLink";
+import { useState } from "react";
+
 const Links = () => {
   const links = [
     {
@@ -23,18 +27,34 @@ const Links = () => {
       title: "Contact",
       path: "/contact",
     },
-    {
-      title: "Login",
-      path: "/login",
-    },
   ];
+  const [open, setOpen] = useState("true");
+  //temp
+  const session = true;
+  const isAdmin = true;
   return (
-    <div className={NavLinks.navlinks}>
-      {links.map((link) => (
-        <Link href={link.path} key={links.title}>
-          {link.title}
-        </Link>
-      ))}
+    <div className="{style.container}">
+      <div className={styles.links}>
+        {links.map((link) => (
+          <NavLink item={link} key={link.title} />
+        ))}
+        {session ? (
+          <>
+            {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}{" "}
+            <Button className={styles.logout}>Logout</Button>{" "}
+          </>
+        ) : (
+          <NavLink item={{ title: "Login", path: "/login" }} />
+        )}
+      </div>
+      <Button onClick={() => setOpen((prev) => !prev)}>Menu</Button>
+      {open && (
+        <div className={styles.mobileLinks}>
+          {links.map((link) => (
+            <NavLink item={link} key={link.title} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

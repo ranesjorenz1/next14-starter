@@ -12,6 +12,8 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import GoogleIcon from "@mui/icons-material/Google";
+
 const LoginPage = () => {
   const [open, setOpen] = React.useState(false);
 
@@ -31,13 +33,22 @@ const LoginPage = () => {
         height: "100vh",
       }}
     >
-      <Card sx={{ maxWidth: 500, padding: 2 }}>
+      <Card
+        sx={{
+          maxWidth: 400,
+          padding: 2,
+          background: "#F0EDE2",
+          borderRadius: 2,
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+        }}
+      >
         <CardContent>
           <h1 style={{}}>Sign in</h1>
           <TextField
             required
             id="outlined-required"
             label="Username"
+            size="small"
             fullWidth={true}
             margin="normal"
             defaultValue=""
@@ -48,6 +59,7 @@ const LoginPage = () => {
             fullWidth={true}
             label="Password"
             margin="normal"
+            size="small"
             defaultValue=""
           />
           <FormControlLabel
@@ -55,20 +67,43 @@ const LoginPage = () => {
             margin="normal"
             label="Remember me"
           />
-        </CardContent>
-        <CardActions style={{ textAlign: "center" }}>
-          <Button variant="contained" fullWidth={true} margin="normal">
+
+          <Button
+            variant="contained"
+            fullWidth={true}
+            margin="normal"
+            size="large"
+            sx={{
+              textTransform: "none",
+            }}
+          >
             Sign in
           </Button>
-        </CardActions>
-        <CardActions style={{ textAlign: "center" }}>
           <Button
-            onClick={handleClickOpen}
-            sx={{ textDecoration: "underline", padding: 0 }}
+            textAlign="center"
+            fullWidth={true}
+            margin="normal"
+            sx={{
+              textDecoration: "underline",
+              padding: 0,
+              textTransform: "none",
+            }}
           >
             Forgot your password?
           </Button>
-        </CardActions>
+          <Button
+            variant="outlined"
+            fullWidth={true}
+            margin="normal"
+            size="large"
+            sx={{
+              textTransform: "none",
+            }}
+            startIcon={<GoogleIcon />}
+          >
+            Sign in with Google
+          </Button>
+        </CardContent>
         <Dialog
           open={open}
           onClose={handleClose}

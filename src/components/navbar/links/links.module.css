@@ -1,6 +1,10 @@
-.navlinks {
+.links {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #f5f5dc;
+  color: var(--text);
+}
+.logout {
+  padding: 8px;
+  cursor: pointer;
 }
