@@ -4,7 +4,8 @@ import { Button } from "@mui/material";
 import styles from "./links.module.css";
 import NavLink from "./navLink/navLink";
 import { useState } from "react";
-
+import MenuIcon from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
 const Links = () => {
   const links = [
     {
@@ -28,7 +29,7 @@ const Links = () => {
       path: "/contact",
     },
   ];
-  const [open, setOpen] = useState("true");
+  const [open, setOpen] = useState(false);
   //temp
   const session = true;
   const isAdmin = true;
@@ -47,14 +48,20 @@ const Links = () => {
           <NavLink item={{ title: "Login", path: "/login" }} />
         )}
       </div>
-      {/* <Button onClick={() => setOpen((prev) => !prev)}>Menu</Button>
+      <Button
+        className={styles.menuButton}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        Menu
+      </Button>
+
       {open && (
         <div className={styles.mobileLinks}>
           {links.map((link) => (
             <NavLink item={link} key={link.title} />
           ))}
         </div>
-      )} */}
+      )}
     </div>
   );
 };
