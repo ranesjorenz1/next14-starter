@@ -6,7 +6,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 body {
   background-color: var(--bg);
@@ -17,13 +16,9 @@ a {
   color: inherit;
 }
 .container {
-  /* background-color: #dad0c8; */
-  width: auto;
-  margin: auto;
-  padding-left: 50px;
-  padding-right: 50px;
+  background-color: #dad0c8;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding: 0;
 }
